@@ -1,0 +1,48 @@
+/* Style the container div */
+div {
+    max-width: 400px; /* Adjust the maximum width as needed */
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  /* Style the document selection dropdown */
+  mat-select {
+    width: 100%;
+  }
+  
+  /* Style the annotation fields */
+  .annotation-fields {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  /* Style the start and end position textareas */
+  .start-field,
+  .end-field {
+    flex: 1;
+    margin-right: 10px;
+  }
+  
+  /* Style the text input field */
+  .text-field {
+    width: 100%;
+  }
+  
+  /* Style the Annotate button */
+  button {
+    margin-top: 10px;
+  }
+  
+  /* Style the displayed document text */
+  div * {
+    margin-top: 10px;
+  }
+  
+  /* Style the text of the selected document */
+  div * p {
+    background-color: #f0f0f0;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  

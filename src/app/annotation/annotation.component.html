@@ -1,0 +1,39 @@
+<div>
+    <h1>Annotation Componnent !</h1>
+    <mat-form-field>
+        <mat-label>Select a Document</mat-label>
+        <mat-select [(ngModel)]="selectedDocument">
+          <mat-option *ngFor="let document of documents" [value]="document">{{ document.id }}</mat-option>
+        </mat-select>
+      </mat-form-field>
+
+      <div *ngIf="selectedDocument">
+        <p>{{ selectedDocument.text }}</p>
+      </div>
+    
+  
+    <mat-form-field>
+        <mat-label>Select</mat-label>
+        <mat-select [(ngModel)]="selectedLabel">
+          <mat-option *ngFor="let label of labels" [value]="label.id">{{ label.text }}</mat-option>
+        </mat-select>
+      </mat-form-field>
+    
+  
+    <div class="annotation-fields">
+      <mat-form-field class="start-field">
+        <textarea matInput [(ngModel)]="start" placeholder="Start position"></textarea>
+      </mat-form-field>
+      <mat-form-field class="end-field">
+        <textarea matInput [(ngModel)]="end" placeholder="End position"></textarea>
+      </mat-form-field>
+    </div>
+    <div>
+      <mat-form-field class="text-field">
+        <input matInput [(ngModel)]="text" placeholder="Text">
+      </mat-form-field>
+    </div>
+  
+    <button mat-raised-button (click)="annotate()">Annotate</button>
+  </div>
+  

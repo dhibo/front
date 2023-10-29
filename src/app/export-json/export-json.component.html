@@ -1,0 +1,17 @@
+<mat-form-field>
+    <mat-label>Select a Document</mat-label>
+    <mat-select [(ngModel)]="selectedDocument">
+      <mat-option *ngFor="let document of documents" [value]="document">{{ document.id }}</mat-option>
+    </mat-select>
+  </mat-form-field>
+  <button mat-button class="custom-button" (click)="export(selectedDocument)">Export</button>
+<div *ngIf="exportedData"><h2>Exported Data</h2>
+  <p>Document: {{ exportedData.document }}</p>
+  <ul>
+    <li *ngFor="let annotation of exportedData.annotations">
+      <p>Start: {{ annotation.start }}</p>
+      <p>End: {{ annotation.end }}</p>
+      <p>Label: {{ annotation.label }}</p>
+      <p>Text: {{ annotation.text }}</p>
+    </li>
+  </ul></div>
